@@ -69,4 +69,62 @@ document.getElementById('novotodo').onclick = function () {
   MinhaLista.add('Novo todo');
 };
 
-MinhaLista.mostraUsuario();
+MinhaLista.mostraUsuario(); // EXEMPLO METODO ESTATICO
+
+var Matematica =
+/*#__PURE__*/
+function () {
+  function Matematica() {
+    _classCallCheck(this, Matematica);
+  }
+
+  _createClass(Matematica, null, [{
+    key: "soma",
+    value: function soma(a, b) {
+      return a + b;
+    }
+  }]);
+
+  return Matematica;
+}();
+
+console.log(Matematica.soma(1, 2));
+var a = 1; // a = 3; NÃO É POSSIVEL REATRIBUIR VALOR EM CONST
+
+var usuario = {
+  nome: 'Marcelo'
+};
+usuario.nome = 'Diego';
+console.log(usuario); //MUTAÇÃO É POSSIVEL EM CONST
+
+function teste(x) {
+  var y = 2; //LET  FUNCIONA SOMENTE NO ESCOPO
+
+  if (x > 5) {
+    var _y = 4;
+    console.log(x, _y);
+  }
+}
+
+teste(10); //console.log(y); //NÃO CONSEGUE VER O Y POR NÃO ESTAR NO ESCOPO
+
+var arr = [1, 3, 4, 5, 8, 10];
+var newArr = arr.map(function (item) {
+  return item * 2;
+});
+console.log(newArr); //SOMO DE TODO ARRAY
+
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum); //RETORNA TODOS OS NÚMERO PARES DO ARRAY
+
+var filter = arr.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(filter); //PROCURA UM ITEM DENTRO DO ARRAY
+
+var find = arr.find(function (item) {
+  return item === 4;
+});
+console.log(find);
