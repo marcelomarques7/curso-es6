@@ -10,5 +10,7 @@
   },
   "scripts": {
     "dev": "babel ./main.js -o ./bundle.js -w"
-  }
+  },
+  "repository": "https://github.com/marcelomarques7/curso-es6",
+  "author": "Marcelo Marques <egs.marcelo@gmail.com>"
 }
