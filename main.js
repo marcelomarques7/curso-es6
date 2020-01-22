@@ -85,3 +85,64 @@ const find = arr.find(function(item){
     return item === 4;
 });
 console.log(find);
+
+
+//ARROW FUNCTIONS
+const arr2 = [1, 3, 4, 5, 6];
+const newArr2 = arr.map(item => item * 2); //DIMINUIU BASTENTE O CODIGO
+console.log(newArr2);
+
+const teste2 = () => ({nome: 'Marcelo'});
+console.log(teste2());
+
+const soma = (a = 3, b = 6) => a + b;
+//VALORES PADRÃO NUMA FUNCAO DE SOMA
+console.log(soma(1,2)); //3
+console.log(soma(1));   //7
+console.log(soma());    //9
+
+
+const usuario2 = {
+    nome: 'Marcelo',
+    idade: 26,
+    endereco:{
+        cidade: 'Biguaçu',
+        estado: 'SC',
+    },
+};
+//const nome = usuario2.nome;
+//const idade = usuario2.idade;
+//const cidade = usuario2.endereco.cidade;
+//CONCEITO DE DESESTRUTURAÇÃO
+const { nome, idade, endereco: { cidade } } = usuario2;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+function mostraNome({nome, idade}){
+    console.log(nome,idade);
+}
+mostraNome(usuario2);
+
+
+// REST
+const usuario3 = {
+    nome3: 'Marcelo',
+    idade3: 26,
+    empresa3: 'TrustTech'
+};
+const { nome3, ...resto } = usuario3;
+console.log(nome3);
+console.log(resto); //resto do objeto
+
+const arr3 = [1, 2, 3, 4];
+const [ a3, b3, ...c3 ] = arr3;
+
+console.log(a3);
+console.log(b3);
+console.log(c3); //resto do objeto
+
+function soma3(a, b, c){
+    return a + b;
+}
+
+console.log(soma3(1, 3, 4));
