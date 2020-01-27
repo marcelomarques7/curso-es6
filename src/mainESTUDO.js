@@ -146,3 +146,42 @@ function soma3(a, b, c){
 }
 
 console.log(soma3(1, 3, 4));
+
+function soma4(...params){
+    return params.reduce((total, next) => total + next);
+}
+console.log(soma4(1,3,4));
+
+// SPREAD
+const arr4 = [1,2,3];
+const arr5 = [4,5,6];
+const arr6 = [...arr4, ...arr5];
+console.log(arr6);
+
+const usuario4 = {
+    nome: 'Marcelo',
+    idade: 26,
+    empresa: 'Rocketseat',
+};
+const usuario5 = {...usuario4, nome: 'Diego'};
+console.log(usuario5);
+
+//Template Literals
+const nome4 = 'Marcelo';
+const idade4 = 26;
+
+console.log('Meu nome é ' + nome + ' e tenho ' + idade + ' anos.');
+console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+
+//Object Short Syntax
+const usuario6 = {
+    nome4,
+    idade4,
+    empresa: 'TrustTech',
+};
+console.log(usuario6);
+
+//IMPORTAR
+import { somateste, sub } from './funcoes';
+console.log(somateste(1,2));
+console.log(sub(4,2));
